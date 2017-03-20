@@ -21,6 +21,7 @@ import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 import {NgProgressCustomBrowserXhr, NgProgressModule} from 'ng2-progressbar';
 import {NgxElectronModule} from 'ngx-electron';
 import {DesktopIntegrationService} from './services/desktopIntegration';
+import {MirrorComponent} from './components/mirror/mirror';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {DesktopIntegrationService} from './services/desktopIntegration';
     StarWarsListComponent,
     StarWarsDetailComponent,
     PokemonListComponent,
-    PokemonDetailComponent
+    PokemonDetailComponent,
+    MirrorComponent
   ],
   imports: [
     BrowserModule,
