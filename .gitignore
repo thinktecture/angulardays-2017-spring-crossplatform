@@ -43,3 +43,4 @@ Thumbs.db
 build/
 packages/
 obj/
+bin/
