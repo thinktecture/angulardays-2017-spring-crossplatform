@@ -15,6 +15,7 @@
   <plugin name="cordova-plugin-device" spec="~1.1.5"/>
   <plugin name="cordova-plugin-statusbar" spec="~2.2.2"/>
   <plugin name="cordova-plugin-splashscreen" spec="~4.0.2"/>
+  <plugin name="cordova-plugin-camera" spec="~2.4.0"/>
   <plugin name="cordova-plugin-crosswalk-webview" spec="~2.3.0">
     <variable name="XWALK_VERSION" value="22+"/>
     <variable name="XWALK_LITEVERSION" value="xwalk_core_library_canary:17+"/>
