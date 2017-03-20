@@ -1,8 +1,10 @@
-const { app, BrowserWindow, globalShortcut } = require('electron');
+const { app, BrowserWindow, globalShortcut, Menu, Tray } = require('electron');
+
 const path = require('path');
 const url = require('url');
 
 let win;
+let trayApp;
 
 function createWindow() {
   win = new BrowserWindow({
@@ -17,6 +19,8 @@ function createWindow() {
     protocol: 'file:',
     slashes: true
   }));
+
+  buildTrayIcon();
 
   globalShortcut.register('CmdOrCtrl+Shift+i', () => {
     win.webContents.toggleDevTools();
@@ -41,3 +45,25 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+let buildTrayIcon = () => {
+  let trayIconPath = path.join(__dirname, 'icon.png');
+  var contextMenu = Menu.buildFromTemplate([
+    {
+      label: 'Pokemons...',
+      type: 'normal',
+      click: function () {
+        win.webContents.send('navigateTo', '/list/pokemon/1');
+      }
+    },
+    {
+      label: 'Quit',
+      accelerator: 'Command+Q',
+      selector: 'terminate:'
+    }
+  ]);
+
+  trayApp = new Tray(trayIconPath);
+  trayApp.setToolTip('ng Demo');
+  trayApp.setContextMenu(contextMenu);
+};

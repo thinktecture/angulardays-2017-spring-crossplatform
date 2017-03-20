@@ -19,6 +19,7 @@ import {PokemonService} from './services/pokemon';
 import {PlatformService} from './services/platform';
 import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 import {NgProgressCustomBrowserXhr, NgProgressModule} from 'ng2-progressbar';
+import {NgxElectronModule} from 'ngx-electron';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {NgProgressCustomBrowserXhr, NgProgressModule} from 'ng2-progressbar';
     FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true }),
-    NgProgressModule
+    NgProgressModule,
+    NgxElectronModule
   ],
   bootstrap: [RootComponent],
   providers: [

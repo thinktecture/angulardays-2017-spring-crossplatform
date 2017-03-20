@@ -14,7 +14,9 @@
     "prod": "rimraf dist && ng build --prod --aot=true --stats-json=true --output-path=\"dist/web\" --base-href=\".\"",
     "prepare-electron": "mkdirp ./tmp/web && ncp buildAssets/desktop tmp && ncp dist/web tmp/web",
     "package-desktop": "npm run prepare-electron && electron-packager ./tmp/ --all --asar --electron-version=1.6.2 --icon=\"buildAssets/resources/icon\" --out=./dist/desktop/ && rimraf tmp",
+    "package-desktop-macos": "npm run prepare-electron && electron-packager ./tmp/ --platform=darwin --asar --electron-version=1.6.2 --icon=\"buildAssets/resources/icon\" --out=./dist/desktop/ && rimraf tmp",
     "build-desktop": "npm run build && npm run package-desktop",
+    "build-desktop-macos": "npm run build && npm run package-desktop-macos",
     "prod-desktop": "npm run prod && npm run package-desktop",
     "generate-mobile-assets": "cd dist/mobile && cordova-icon --icon=\"../../buildAssets/resources/icon.png\" && cordova-splash --splash=\"../../buildAssets/resources/splash.png\"",
     "prepare-mobile": "mkdirp dist/mobile/www && ncp dist/web dist/mobile/www && ncp buildAssets/mobile dist/mobile",
@@ -49,6 +51,7 @@
     "include-media": "1.4.9",
     "ng2-progressbar": "^1.3.0",
     "ng2-slim-loading-bar": "^2.4.0",
+    "ngx-electron": "0.0.11",
     "rxjs": "5.2.0",
     "zone.js": "0.8.4"
   },
