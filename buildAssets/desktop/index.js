@@ -1,4 +1,5 @@
 const { app, BrowserWindow, globalShortcut, Menu, Tray } = require('electron');
+const appMenu = require('./appMenu');
 
 const path = require('path');
 const url = require('url');
@@ -21,6 +22,7 @@ function createWindow() {
   }));
 
   buildTrayIcon();
+  appMenu.buildMenu();
 
   globalShortcut.register('CmdOrCtrl+Shift+i', () => {
     win.webContents.toggleDevTools();
