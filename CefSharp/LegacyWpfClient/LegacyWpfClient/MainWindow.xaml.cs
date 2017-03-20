@@ -23,7 +23,7 @@ namespace LegacyWpfClient
       var browserSettings = new BrowserSettings
       {
         FileAccessFromFileUrls = CefState.Enabled,
-        WebSecurity = CefState.Enabled
+        WebSecurity = CefState.Disabled
       };
 
       webBrowser = new ChromiumWebBrowser();
