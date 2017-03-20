@@ -3,7 +3,8 @@ import {CameraService} from '../../services/camera';
 
 @Component({
   selector: 'app-mirror',
-  templateUrl: 'mirror.html'
+  templateUrl: 'mirror.html',
+  styleUrls: ['mirror.scss']
 })
 export class MirrorComponent {
   public photo: any;
