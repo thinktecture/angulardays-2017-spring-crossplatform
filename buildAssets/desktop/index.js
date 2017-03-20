@@ -53,7 +53,7 @@ let buildTrayIcon = () => {
       label: 'Pokemons...',
       type: 'normal',
       click: function () {
-        win.webContents.send('navigateTo', '/list/pokemon/1');
+        win.webContents.send('navigateTo', 'pokemon/list/pokemon/1');
       }
     },
     {

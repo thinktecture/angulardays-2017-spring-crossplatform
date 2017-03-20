@@ -20,6 +20,7 @@ import {PlatformService} from './services/platform';
 import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 import {NgProgressCustomBrowserXhr, NgProgressModule} from 'ng2-progressbar';
 import {NgxElectronModule} from 'ngx-electron';
+import {DesktopIntegrationService} from './services/desktopIntegration';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import {NgxElectronModule} from 'ngx-electron';
     StarWarsService,
     PokemonService,
     PlatformService,
+    DesktopIntegrationService,
     { provide: BrowserXhr, useClass: NgProgressCustomBrowserXhr } ,
   ]
 })

@@ -1,6 +1,7 @@
 export class PlatformService {
   private _iOS: boolean;
   private _isAndroid: boolean;
+  private _isElectron: boolean;
 
   public get isMobileDevice(): boolean {
     return this._iOS || this._isAndroid;
@@ -22,6 +23,10 @@ export class PlatformService {
     return this._isAndroid;
   }
 
+  public get isElectron(): boolean {
+    return this._isElectron;
+  }
+
   constructor() {
     this.guessPlatform();
   }
@@ -29,5 +34,6 @@ export class PlatformService {
   private guessPlatform(): void {
     this._iOS = window.cordova && window.cordova.platformId === 'ios';
     this._isAndroid = window.cordova && window.cordova.platformId === 'android';
+    this._isElectron = window.navigator.userAgent.match(/Electron/) !== null;
   }
 }

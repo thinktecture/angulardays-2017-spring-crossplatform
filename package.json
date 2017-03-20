@@ -60,6 +60,7 @@
     "@angular/compiler-cli": ">=4.0.0-rc.5 <5.0.0",
     "@types/cordova": "0.0.34",
     "@types/cordova-plugin-device": "0.0.3",
+    "@types/electron": "^1.4.34",
     "@types/jasmine": "2.5.46",
     "@types/node": "7.0.8",
     "codelyzer": "2.0.0",
