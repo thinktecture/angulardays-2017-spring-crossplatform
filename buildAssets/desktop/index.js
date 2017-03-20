@@ -28,6 +28,13 @@ function createWindow() {
     win.webContents.toggleDevTools();
   });
 
+  globalShortcut.register('CmdOrCtrl+Shift+b', function () {
+    if (process.platform == 'darwin') {
+      app.dock.bounce('critical');
+    }
+    app.dock.setBadge('EVIL:)');
+  });
+
   win.on('closed', () => {
     win = null;
   });
