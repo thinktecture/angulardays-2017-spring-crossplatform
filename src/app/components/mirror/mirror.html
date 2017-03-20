@@ -1,6 +1,6 @@
 <h1>Mirror</h1>
 
-<div *ngIf="true">
+<div *ngIf="photo">
   <img [src]="photo">
-  <button type="button" (click)="takePhoto()"><i class="fa fa-camera fa-2x"></i></button>
 </div>
+<button type="button" (click)="takePhoto()"><i class="fa fa-camera fa-2x"></i></button>

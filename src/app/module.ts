@@ -2,9 +2,9 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {BrowserXhr, HttpModule} from '@angular/http';
+import {RouterModule} from '@angular/router';
 
 import {RootComponent} from './components/root/root';
-import {RouterModule} from '@angular/router';
 import {ROUTES} from './routes';
 import {HomeComponent} from './components/home/home';
 import {HeaderComponent} from './components/header/header';
@@ -17,11 +17,11 @@ import {PokemonListComponent} from './components/list/pokemonList';
 import {PokemonDetailComponent} from './components/detail/pokemonDetail';
 import {PokemonService} from './services/pokemon';
 import {PlatformService} from './services/platform';
-import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 import {NgProgressCustomBrowserXhr, NgProgressModule} from 'ng2-progressbar';
 import {NgxElectronModule} from 'ngx-electron';
 import {DesktopIntegrationService} from './services/desktopIntegration';
 import {MirrorComponent} from './components/mirror/mirror';
+import {CameraService, cameraServiceFactory} from './services/camera';
 
 @NgModule({
   declarations: [
@@ -50,7 +50,10 @@ import {MirrorComponent} from './components/mirror/mirror';
     PokemonService,
     PlatformService,
     DesktopIntegrationService,
-    { provide: BrowserXhr, useClass: NgProgressCustomBrowserXhr } ,
+    { provide: BrowserXhr, useClass: NgProgressCustomBrowserXhr },
+    {
+      provide: CameraService, useFactory: cameraServiceFactory, deps: [PlatformService]
+    }
   ]
 })
 export class AppModule {
