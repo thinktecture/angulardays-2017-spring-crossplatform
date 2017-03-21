@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {DesktopIntegrationService} from '../../services/desktopIntegration';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +6,4 @@ import {DesktopIntegrationService} from '../../services/desktopIntegration';
   styleUrls: ['root.scss']
 })
 export class RootComponent {
-  constructor(private _desktopIntegration: DesktopIntegrationService) {
-    this._desktopIntegration.register();
-  }
 }

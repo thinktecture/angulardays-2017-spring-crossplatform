@@ -16,12 +16,10 @@ import {StarWarsDetailComponent} from './components/detail/starWarsDetail';
 import {PokemonListComponent} from './components/list/pokemonList';
 import {PokemonDetailComponent} from './components/detail/pokemonDetail';
 import {PokemonService} from './services/pokemon';
-import {PlatformService} from './services/platform';
 import {NgProgressCustomBrowserXhr, NgProgressModule} from 'ng2-progressbar';
-import {NgxElectronModule} from 'ngx-electron';
-import {DesktopIntegrationService} from './services/desktopIntegration';
 import {MirrorComponent} from './components/mirror/mirror';
-import {CameraService, cameraServiceFactory} from './services/camera';
+import {CameraService} from './services/camera';
+import {DesktopCameraService} from './services/desktopCamera';
 
 @NgModule({
   declarations: [
@@ -40,19 +38,16 @@ import {CameraService, cameraServiceFactory} from './services/camera';
     FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true }),
-    NgProgressModule,
-    NgxElectronModule
+    NgProgressModule
   ],
   bootstrap: [RootComponent],
   providers: [
     WindowRef,
     StarWarsService,
     PokemonService,
-    PlatformService,
-    DesktopIntegrationService,
     { provide: BrowserXhr, useClass: NgProgressCustomBrowserXhr },
     {
-      provide: CameraService, useFactory: cameraServiceFactory, deps: [PlatformService]
+      provide: CameraService, useClass: DesktopCameraService
     }
   ]
 })
