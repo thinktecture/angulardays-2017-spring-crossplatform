@@ -19,6 +19,10 @@
   @include media('<=desktop') {
     justify-content: center;
   }
+
+  @include media('>phone', '<=tablet') {
+    z-index: 1;
+  }
 }
 
 .brand {
