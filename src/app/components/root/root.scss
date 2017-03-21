@@ -4,14 +4,6 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-}
 
-.scroll {
-  overflow-y: scroll;
   padding: $gap;
-  position: fixed;
-  bottom: $menu-height;
-  left: 0;
-  right: 0;
-  top: $header-height;
 }
