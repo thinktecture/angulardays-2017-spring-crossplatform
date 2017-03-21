@@ -1,5 +1,4 @@
 @import '../../../styles/_variables';
-@import '../../../styles/_utilities';
 
 :host {
   display: flex;
@@ -15,8 +14,4 @@
   left: 0;
   right: 0;
   top: $header-height;
-
-  @include media('>=tablet', '<=desktop') {
-    padding-left: 100px;
-  }
 }
